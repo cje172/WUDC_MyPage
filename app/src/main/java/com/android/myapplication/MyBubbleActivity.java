@@ -54,7 +54,7 @@ public class MyBubbleActivity extends MainActivity {
         bubble1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                
+
             }
         });
 

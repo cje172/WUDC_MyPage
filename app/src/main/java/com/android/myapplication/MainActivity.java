@@ -48,6 +48,9 @@ public class MainActivity extends AppCompatActivity {
     EditText edt_phoneNum;
     EditText edt_account;
     Button info_save_btn;
+    ImageView info_pencil1;
+    ImageView info_pencil2;
+    ImageView info_pencil3;
     FloatingActionButton fab;
 
     MediaRecorder recorder;
@@ -85,7 +88,9 @@ public class MainActivity extends AppCompatActivity {
         edt_account = findViewById(R.id.edt_account);
         info_save_btn = findViewById(R.id.info_save_btn);
 
-
+        info_pencil1 = findViewById(R.id.info_pencil1);
+        info_pencil2 = findViewById(R.id.info_pencil2);
+        info_pencil3 = findViewById(R.id.info_pencil3);
 
         // SD카드
         File sdcard = Environment.getExternalStorageDirectory();
@@ -116,6 +121,10 @@ public class MainActivity extends AppCompatActivity {
                 info_change_btn.setVisibility(View.INVISIBLE);
                 info_save_btn.setVisibility(View.VISIBLE);
 
+                info_pencil1.setVisibility(View.VISIBLE);
+                info_pencil2.setVisibility(View.VISIBLE);
+                info_pencil3.setVisibility(View.VISIBLE);
+
                 nameView.setVisibility(View.INVISIBLE);
                 phoneNumView.setVisibility(View.INVISIBLE);
                 accountView.setVisibility(View.INVISIBLE);
@@ -143,6 +152,10 @@ public class MainActivity extends AppCompatActivity {
                         edt_name.setVisibility(View.INVISIBLE);
                         edt_phoneNum.setVisibility(View.INVISIBLE);
                         edt_account.setVisibility(View.INVISIBLE);
+                        info_pencil1.setVisibility(View.INVISIBLE);
+                        info_pencil2.setVisibility(View.INVISIBLE);
+                        info_pencil3.setVisibility(View.INVISIBLE);
+
                     }
                 });
             }
@@ -189,6 +202,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), SecurityActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        // 마이페이지 - 고객센터/도움말 화면으로 이동
+        help_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), HelpActivity.class);
                 startActivity(intent);
             }
         });

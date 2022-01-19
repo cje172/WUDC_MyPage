@@ -44,38 +44,33 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar">
 
-        <CheckBox
+
+        <Button
+            android:id="@+id/help_btn"
             android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_height="55dp"
             android:layout_marginStart="24dp"
             android:layout_marginTop="30dp"
             android:layout_marginEnd="24dp"
             android:layout_marginBottom="20dp"
             android:background="@drawable/bottom_button_shape"
-            android:button="@null"
-            android:buttonTint="#6F6F6F"
-            android:checked="true"
-            android:clickable="false"
-            android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
-            android:text="알림켜기"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
-        <Button
-            android:id="@+id/help_btn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:text="도움말"
+            android:gravity="left|center"
             android:textColor="@color/black"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textSize="18sp" />
 
         <Button
             android:id="@+id/button7"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Button" />
+            android:layout_height="55dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/bottom_button_shape"
+            android:text="고객센터 문의하기"
+            android:gravity="left|center"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
 
     </LinearLayout>
 
