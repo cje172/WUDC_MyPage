@@ -11,7 +11,6 @@ import android.content.pm.PackageManager;
 import android.media.MediaRecorder;
 import android.os.Bundle;
 import android.os.Environment;
-import android.provider.MediaStore;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -24,12 +23,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 
 import java.io.File;
 import java.io.IOException;
 
-public class MainActivity extends AppCompatActivity {
+public class MyPageActivity extends AppCompatActivity {
     final private static String RECORD_FILE = "/sdcard/recorded.mp4";
 
     ImageButton monolog_btn;
@@ -51,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
     ImageView info_pencil1;
     ImageView info_pencil2;
     ImageView info_pencil3;
+    ImageView profileImage_blur;
     FloatingActionButton fab;
 
     MediaRecorder recorder;
@@ -59,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_mypage);
 
         // 툴바 생성
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -91,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
         info_pencil1 = findViewById(R.id.info_pencil1);
         info_pencil2 = findViewById(R.id.info_pencil2);
         info_pencil3 = findViewById(R.id.info_pencil3);
+        profileImage_blur = findViewById(R.id.profileImage_blur);
 
         // SD카드
         File sdcard = Environment.getExternalStorageDirectory();
@@ -124,6 +124,7 @@ public class MainActivity extends AppCompatActivity {
                 info_pencil1.setVisibility(View.VISIBLE);
                 info_pencil2.setVisibility(View.VISIBLE);
                 info_pencil3.setVisibility(View.VISIBLE);
+                profileImage_blur.setVisibility(View.VISIBLE);
 
                 nameView.setVisibility(View.INVISIBLE);
                 phoneNumView.setVisibility(View.INVISIBLE);
@@ -133,13 +134,24 @@ public class MainActivity extends AppCompatActivity {
                 edt_phoneNum.setVisibility(View.VISIBLE);
                 edt_account.setVisibility(View.VISIBLE);
 
+                // 프로필 이미지 수정 시
+                profileImage_blur.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+
+                    }
+                });
+
                 // 저장 버튼 눌렀을 때
                 info_save_btn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+
                         Toast.makeText(getApplicationContext(), "프로필 변경이 완료되었습니다.", Toast.LENGTH_SHORT).show();
                         info_save_btn.setVisibility(View.INVISIBLE);
                         info_change_btn.setVisibility(View.VISIBLE);
+                        profileImage_blur.setVisibility(View.INVISIBLE);
 
                         nameView.setText(edt_name.getText().toString() + "님");
                         phoneNumView.setText(edt_phoneNum.getText().toString());
@@ -259,7 +271,7 @@ public class MainActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case android.R.id.home: { //toolbar의 back키 눌렀을 때 동작
                 // 액티비티 이동
-                Intent intent = new Intent(getApplicationContext(), MyMonologActivity.class);
+                Intent intent = new Intent(getApplicationContext(), MyPageActivity.class);
                 // 위 문장에서 MyMonolog.class 대신 뒤로 돌아갈 화면 입력해야함
                 startActivity(intent);
                 return true;

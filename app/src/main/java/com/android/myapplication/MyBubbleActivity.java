@@ -1,16 +1,14 @@
 package com.android.myapplication;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.ImageButton;
 
-public class MyBubbleActivity extends MainActivity {
+public class MyBubbleActivity extends MyPageActivity {
 
     ImageButton bubble1;
     ImageButton bubble2;
@@ -51,12 +49,7 @@ public class MyBubbleActivity extends MainActivity {
         bubble14 = findViewById(R.id.bubble14);
         bubble15 = findViewById(R.id.bubble15);
 
-        bubble1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
 
-            }
-        });
 
         // 툴바 생성
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -77,7 +70,7 @@ public class MyBubbleActivity extends MainActivity {
         switch (item.getItemId()) {
             case android.R.id.home: { //toolbar의 back키 눌렀을 때 동작
                 // 액티비티 이동
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                Intent intent = new Intent(getApplicationContext(), MyPageActivity.class);
                 // 위 문장에서 MyMonolog.class 대신 뒤로 돌아갈 화면 입력해야함
                 startActivity(intent);
                 return true;
