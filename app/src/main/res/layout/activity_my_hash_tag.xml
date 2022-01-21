@@ -108,10 +108,10 @@
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="20dp"
         android:backgroundTint="#FFCF4D"
+        android:src="@drawable/record_icon"
         app:borderWidth="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:src="@drawable/record_icon"
         app:srcCompat="@android:drawable/ic_btn_speak_now" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
